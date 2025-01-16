@@ -24,14 +24,14 @@ header {
 
 .menu {
     background-color: #f8f9fa;
-    width: 30%;
+    width: 20%;
     padding: 20px;
     border-right: 1px solid #ddd;
 }
 
 main {
     background-color: #ffffff;
-    width: 70%;
+    width: 80%;
     padding: 20px;
 }
 
@@ -42,4 +42,12 @@ footer {
     padding: 20px 0;
     width: 100%;
     margin-top: 20px;
+}
+
+.logo {
+    color: white;
+}
+
+#main {
+    color: rgba(0, 166, 255, 0.44);
 }
