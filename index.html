@@ -1,69 +1,220 @@
 <!DOCTYPE html>
-<html lang="cs" xmlns="http://www.w3.org/1999/html">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <title>Osobní peněženka</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
 
-<header>
-    <h1>Moje peněženka</h1>
-    </br>
-    <div>
-        <img alt="header picture" src="../img/headerpicture.png">
-        <p>Spravujte své finance jednoduše a přehledně
-            Náš systém pro evidenci příjmů a výdajů vám pomůže mít dokonalý přehled o vašich financích. Sledujte své
-            příjmy, výdaje a rozpočty na jednom místě. Využijte chytré grafy, podrobné statistiky
-            a upozornění, abyste měli své finance pod kontrolou. Díky snadné správě kategorií a možnosti importu
-            bankovních dat je vedení záznamů rychlé a pohodlné. </p>
-        </br>
-        <p><strong>Začněte ještě dnes a mějte své finance pod kontrolou!</strong></p>
+<header class="bg-blue-200 text-white shadow">
+    <div class="container mx-auto flex items-center py-5 px-4 space-x-4">
+        <div class="w-16 h-16 flex items-center justify-center bg-white rounded-full shadow">
+            <img alt="logo" src="../img/logo.png" class="w-10 h-10 object-contain">
+        </div>
+        <h1 class="text-3xl font-bold tracking-wide">Moje peněženka</h1>
     </div>
 </header>
-<div class="content">
-    <nav class="menu">
-        <h2>Menu</h2>
-        </br>
-        <ul>
-            <li>Přehled</li>
-            <li>Transakce</li>
-            <li>Rozpočty</li>
-            <li>Analýzy</li>
-            <li>Import/Export</li>
-            <li>Nastavení</li>
+
+<div class="container mx-auto mt-8 flex flex-col md:flex-row">
+
+
+
+
+    <!-- Sidebar -->
+    <nav class="bg-white shadow-md w-full md:w-1/4 p-5 rounded-lg md:mr-6 relative">
+
+        <div class="flex items-center justify-between mb-6">
+            <div class="text-gray-700">
+                <span class="font-bold">Přihlášen:</span> Jan Zítko
+            </div>
+            <button class="bg-red-400 text-white px-3 py-1 rounded hover:bg-red-500 flex items-center">
+                <span class="material-icons text-white mr-2">logout</span>
+                Odhlásit se
+            </button>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="m-5">
+            <div class="flex items-center bg-gray-100 rounded-md shadow-md">
+                <span class="material-icons text-gray-500 px-3">search</span>
+                <input type="text" placeholder="Vyhledat..." class="w-full px-4 py-2 bg-gray-100 rounded-r-md focus:outline-none focus:ring focus:ring-blue-300">
+            </div>
+        </div>
+
+        <ul class="space-y-3">
+            <li>
+                <a href="#" class="group flex items-center py-2 px-4 bg-blue-100 rounded hover:bg-blue-200">
+                    <span class="material-icons text-blue-600 group-hover:text-blue-800 mr-3">dashboard</span>
+                    <span class="text-blue-600 group-hover:text-blue-800">Přehled</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="group flex items-center py-2 px-4 bg-blue-100 rounded hover:bg-blue-200">
+                    <span class="material-icons text-blue-600 group-hover:text-blue-800 mr-3">list_alt</span>
+                    <span class="text-blue-600 group-hover:text-blue-800">Transakce</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="group flex items-center py-2 px-4 bg-blue-100 rounded hover:bg-blue-200">
+                    <span class="material-icons text-blue-600 group-hover:text-blue-800 mr-3">account_balance_wallet</span>
+                    <span class="text-blue-600 group-hover:text-blue-800">Rozpočty</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="group flex items-center py-2 px-4 bg-blue-100 rounded hover:bg-blue-200">
+                    <span class="material-icons text-blue-600 group-hover:text-blue-800 mr-3">analytics</span>
+                    <span class="text-blue-600 group-hover:text-blue-800">Analýzy</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="group flex items-center py-2 px-4 bg-blue-100 rounded hover:bg-blue-200">
+                    <span class="material-icons text-blue-600 group-hover:text-blue-800 mr-3">import_export</span>
+                    <span class="text-blue-600 group-hover:text-blue-800">Import/Export</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="group flex items-center py-2 px-4 bg-blue-100 rounded hover:bg-blue-200">
+                    <span class="material-icons text-blue-600 group-hover:text-blue-800 mr-3">settings</span>
+                    <span class="text-blue-600 group-hover:text-blue-800">Nastavení</span>
+                </a>
+            </li>
         </ul>
     </nav>
-    <main>
-        <h2>Přehled transakcí za posledních 7 dní</h2> </br>
 
-        <table>
-            <tr>
-                <th>Datum transakce</th>
-                <th>Kategorie</th>
-                <th>Ikona</th>
-                <th>Částka</th>
-                <th>Účet</th>
-                <th>Poznámka</th>
-                <th>Vložil</th>
-                <th>Vloženo</th>
-            </tr>
-            <tr>
-                <td> 16.1.2025</td>
-                <td> Jídlo</td>
-                <td><img width="20px" height="20px" alt="logo" src="../img/logo_png-300x110.png"></td>
-                <td> 1 000 Kč</td>
-                <td> ČSOB premium</td>
-                <td><a target="_blank" href="https://sievert-consulting.cz">Lidl</a></td>
-                <th> Jan Zítko</th>
-                <th> 16.1.2025 18:19</th>
-            </tr>
-        </table>
 
+
+
+
+
+
+    <!-- Main Content -->
+    <main class="bg-white shadow-md w-full md:w-3/4 p-5 rounded-lg">
+
+
+        <h2 class="text-xl font-bold mb-4">Přehled transakcí za posledních 7 dní</h2>
+
+
+        <!-- Tab Navigation -->
+        <div class="mb-6">
+            <ul class="flex border-b">
+                <li class="mr-1">
+                    <a href="#add-transaction" onclick="showTab('add-transaction')"
+                       class="bg-blue-100 inline-block py-2 px-4 text-blue-500 font-semibold rounded-t-lg hover:bg-blue-200">Přidat
+                        transakci</a>
+                </li>
+                <li class="mr-1">
+                    <a href="#transaction-list" onclick="showTab('transaction-list')"
+                       class="bg-blue-100 inline-block py-2 px-4 text-blue-500 font-semibold rounded-t-lg hover:bg-blue-200">Seznam
+                        transakcí</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Tabs Content -->
+        <div id="add-transaction" class="tab-content">
+            <!-- Form for Adding New Transactions -->
+            <form class="bg-gray-100 p-4 rounded-lg mb-6">
+                <h3 class="text-lg font-bold mb-3">Přidat novou transakci</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div>
+                        <label for="category" class="block text-sm font-medium text-gray-700">Kategorie</label>
+                        <select id="category" name="category"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-xl focus:ring-blue-500 focus:border-blue-500">
+                            <option>Jídlo</option>
+                            <option>Doprava</option>
+                            <option>Bydlení</option>
+                            <option>Zábava</option>
+                            <option>Ostatní</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="account" class="block text-sm font-medium text-gray-700">Účet</label>
+                        <select id="account" name="account"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-xl focus:ring-blue-500 focus:border-blue-500">
+                            <option>ČSOB Premium</option>
+                            <option>Air Bank</option>
+                            <option>Spořicí účet</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="amount" class="block text-sm font-medium text-gray-700">Částka</label>
+                        <input type="number" step="0.01" id="amount" name="amount"
+                               class="mt-1 block w-full rounded-md border-gray-300 shadow-xl focus:ring-blue-500 focus:border-blue-500"
+                               placeholder="0.00">
+                    </div>
+                    <div>
+                        <label for="currency" class="block text-sm font-medium text-gray-700">Měna</label>
+                        <select id="currency" name="currency"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-xl focus:ring-blue-500 focus:border-blue-500">
+                            <option>CZK</option>
+                            <option>EUR</option>
+                            <option>USD</option>
+                            <option>GBP</option>
+                            <option>JPY</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <button type="submit" class="group bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex items-center">
+                        <span class="material-icons text-white mr-2">add_circle</span>
+                        Přidat transakci
+                    </button
+                </div>
+            </form>
+        </div>
+
+        <div id="transaction-list" class="tab-content hidden">
+            <!-- Existing Transactions Table -->
+            <table class="table-auto w-full border-collapse border border-gray-200">
+                <thead>
+                <tr class="bg-gray-200">
+                    <th class="border border-gray-300 px-4 py-2">Datum transakce</th>
+                    <th class="border border-gray-300 px-4 py-2">Kategorie</th>
+                    <th class="border border-gray-300 px-4 py-2">Ikona</th>
+                    <th class="border border-gray-300 px-4 py-2">Částka</th>
+                    <th class="border border-gray-300 px-4 py-2">Účet</th>
+                    <th class="border border-gray-300 px-4 py-2">Poznámka</th>
+                    <th class="border border-gray-300 px-4 py-2">Vložil</th>
+                    <th class="border border-gray-300 px-4 py-2">Vloženo</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="border border-gray-300 px-4 py-2">16.1.2025</td>
+                    <td class="border border-gray-300 px-4 py-2">Jídlo</td>
+                    <td class="border border-gray-300 px-4 py-2">
+                        <img src="../img/logo_png-300x110.png" alt="ikona" class="w-5 h-5">
+                    </td>
+                    <td class="border border-gray-300 px-4 py-2">1 000 Kč</td>
+                    <td class="border border-gray-300 px-4 py-2">ČSOB premium</td>
+                    <td class="border border-gray-300 px-4 py-2">
+                        <a href="https://sievert-consulting.cz" target="_blank" class="text-blue-500 hover:underline">Lidl</a>
+                    </td>
+                    <td class="border border-gray-300 px-4 py-2">Jan Zítko</td>
+                    <td class="border border-gray-300 px-4 py-2">16.1.2025 18:19</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </main>
+
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.add('hidden');
+            });
+            document.getElementById(tabId).classList.remove('hidden');
+        }
+    </script>
+
 </div>
-<footer>
-    Toto je footer
+
+<footer class="bg-blue-200 text-white mt-8 py-4">
+    <div class="container mx-auto text-center">
+        <p>&copy; 2025 Osobní peněženka. Všechna práva vyhrazena.</p>
+    </div>
 </footer>
 
 </body>
