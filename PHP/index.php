@@ -211,10 +211,23 @@ Popis: Na základě věku se rozhodne, zda zobrazit "Ahoj, mladý {jméno}!" neb
     -->
     <div class="mb-6 p-4 bg-teal-100 rounded">
         <h2 class="text-lg font-semibold">Úkol 7 - Vítej, uživateli!</h2>
+        <form method="POST">
+            <label for="jmeno2">Jméno:</label>
+            <input type="text" name="jmeno2" id="jmeno2" required>
+            <label for="vek">Věk:</label>
+            <input type="number" name="vek" id="vek" required>
+            <button type="submit" class="bg-green-500 text-white p-2 rounded">Odeslat</button>
+        </form>
         <?php
-        $jmeno = "Jan";
-        $vek = 17;
-        echo ($vek < 18) ? "Ahoj, mladý $jmeno!" : "Vítej, $jmeno!";
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (isset($_POST["jmeno2"]) && isset($_POST["vek"])) {
+                $jmeno2 = htmlspecialchars($_POST["jmeno2"]);
+                $vek = (int) $_POST["vek"];
+                echo ($vek < 18) ? "Ahoj, mladý $jmeno2!" : "Vítej, $jmeno2!";
+            } else {
+                echo "Prosím, vyplňte všechna pole.";
+            }
+        }
         ?>
     </div>
     <!--
