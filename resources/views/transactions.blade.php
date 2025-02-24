@@ -1,5 +1,5 @@
 <x-layouts.app>
 
-    PRIHLASOVACI STRANKA
+    TRANSAKCE OBSAH
 
 </x-layouts.app>

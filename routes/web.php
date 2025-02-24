@@ -14,13 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
 
 
+Route::get('/transactions', function () {
+    return view('transactions');
+});
 
-Route::get('/ahoj', function () {
-
-   user = User:where("")
-
-}
