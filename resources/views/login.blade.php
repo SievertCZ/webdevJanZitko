@@ -1,7 +1,8 @@
 <x-layouts.appGuest>
 
     <div class="max-w-md mx-auto bg-gray-100 p-6 rounded-lg shadow-md">
-        <form novalidate onsubmit="return false">
+        <form action="/login" method="POST">
+            @csrf
             <!-- Email -->
             <div class="mb-4">
                 <label for="email" class="block text-sm font-medium text-gray-700">Email</label>

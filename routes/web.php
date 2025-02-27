@@ -1,46 +1,21 @@
+
 <?php
 
-use App\Http\Controllers\AuthController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TransactionsController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Zde můžete registrovat webové routy pro vaši aplikaci.
-|
-*/
+Route::get('/register', [AuthController::class, 'index'])->name('register');
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/transactions/{transactions}', [TransactionsController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index']);
 
-Route::get('/', function () {
-    return view('dashboard');
-})->name('home');
 
-Route::get('/transactions', function () {
-    return view('transactions');
-})->name('transactions');
-
-// Routa pro přihlašovací formulář
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
-
-// Routa pro registrační stránku
-Route::get('/register', function () {
-    return view('register');
-})->name('register');
-
-// Routa pro registrační stránku
-Route::post('/register', [AuthController::class, 'register'] )->name('register');
-
-// Volitelná routa pro zapomenuté heslo
-Route::get('/forgot-password', function () {
-    return view('forgot-password');
-})->name('forgot-password');
-
-// Routa pro odhlášení uživatele (tlačítko Odhlásit se ve vašem headeru)
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'authenticate']);
 Route::post('/logout', function () {
     Auth::logout();
-    return redirect('/');
+    return redirect('/login');
 })->name('logout');
