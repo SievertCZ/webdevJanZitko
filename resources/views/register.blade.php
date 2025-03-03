@@ -8,7 +8,7 @@
                 @csrf
                 <div class="mb-4">
                     <label for="name" class="block text-sm font-medium text-gray-700">Jméno</label>
-                    <input type="text" id="name" name="name" required placeholder="Vaše jméno" class="mt-1 block w-full rounded-md border border-gray-300 focus:border-blue-300 focus:ring-blue-300 focus:ring-1 focus:outline-none text-lg p-2">
+                    <input type="text" id="name" name="name" required placeholder="Vaše přezdívka" class="mt-1 block w-full rounded-md border border-gray-300 focus:border-blue-300 focus:ring-blue-300 focus:ring-1 focus:outline-none text-lg p-2">
                     @error("name")
                     <div class="text-red-500 text-sm">{{ $message }}</div>
                     @enderror
