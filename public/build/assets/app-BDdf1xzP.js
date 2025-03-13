@@ -1,0 +1,1 @@
+require("./bootstrap");document.addEventListener("DOMContentLoaded",function(){const e=new Date().toISOString().split("T")[0];document.getElementById("dateOutput")&&(document.getElementById("dateOutput").value=e),document.getElementById("dateIncome")&&(document.getElementById("dateIncome").value=e),document.getElementById("form-output").classList.remove("hidden")});
