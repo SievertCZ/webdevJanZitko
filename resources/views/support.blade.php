@@ -1,5 +1,5 @@
 <x-layouts.app>
 
-    TRANSAKCE
+    PODPORA
 
 </x-layouts.app>

@@ -22,42 +22,35 @@
             </a>
         </li>
         <li>
-            <a href="/transactions"
-               class="group flex items-center py-2 px-4 bg-blue-100 rounded hover:bg-blue-200 hover:scale-105 shadow-md hover:shadow-lg transition-all">
-                <span class="material-icons text-blue-600 group-hover:text-blue-800 mr-3">list_alt</span>
-                <span class="text-blue-600 group-hover:text-blue-800">Transakce</span>
-            </a>
-        </li>
-        <li>
-            <a href="#"
+            <a href="/transfers"
                class="group flex items-center py-2 px-4 bg-blue-100 rounded hover:bg-blue-200 hover:scale-105 shadow-md hover:shadow-lg transition-all">
                 <span class="material-icons text-blue-600 group-hover:text-blue-800 mr-3">sync_alt</span>
                 <span class="text-blue-600 group-hover:text-blue-800">Převody</span>
             </a>
         </li>
         <li>
-            <a href="#"
+            <a href="/budgets"
                class="group flex items-center py-2 px-4 bg-blue-100 rounded hover:bg-blue-200 hover:scale-105 shadow-md hover:shadow-lg transition-all">
                 <span class="material-icons text-blue-600 group-hover:text-blue-800 mr-3">account_balance_wallet</span>
                 <span class="text-blue-600 group-hover:text-blue-800">Rozpočty</span>
             </a>
         </li>
         <li>
-            <a href="#"
+            <a href="/analysis"
                class="group flex items-center py-2 px-4 bg-blue-100 rounded hover:bg-blue-200 hover:scale-105 shadow-md hover:shadow-lg transition-all">
                 <span class="material-icons text-blue-600 group-hover:text-blue-800 mr-3">analytics</span>
                 <span class="text-blue-600 group-hover:text-blue-800">Analýzy</span>
             </a>
         </li>
         <li>
-            <a href="#"
+            <a href="/import-export"
                class="group flex items-center py-2 px-4 bg-blue-100 rounded hover:bg-blue-200 hover:scale-105 shadow-md hover:shadow-lg transition-all">
                 <span class="material-icons text-blue-600 group-hover:text-blue-800 mr-3">import_export</span>
                 <span class="text-blue-600 group-hover:text-blue-800">Import/Export</span>
             </a>
         </li>
         <li>
-            <a href="#"
+            <a href="/support"
                class="group flex items-center py-2 px-4 bg-blue-100 rounded hover:bg-blue-200 hover:scale-105 shadow-md hover:shadow-lg transition-all">
                 <span class="material-icons text-blue-600 group-hover:text-blue-800 mr-3">support_agent</span>
                 <span class="text-blue-600 group-hover:text-blue-800">Podpora</span>

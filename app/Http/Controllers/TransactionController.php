@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Transaction;
 use App\Models\Account;
@@ -11,35 +12,41 @@ class TransactionController extends Controller
 {
     public function showIncomeForm()
     {
-        $accounts = Account::where('user_id', Auth::id())->get();
+        $accounts = Account::where('user_id', auth()->id())->get();
+        $categories = Category::all();
 
-        return view('form.form_input', compact('accounts'));
+        return view('form.form_input', compact('accounts', 'categories'));
     }
+
 
     public function storeIncome(Request $request)
     {
+        // Ověř, zda je uživatel přihlášen
+        if (!auth()->check()) {
+            return redirect()->route('login')->with('error', 'Musíte být přihlášen pro přidání transakce.');
+        }
+
         // Validace vstupů
         $validated = $request->validate([
             'dateIncome' => 'required|date',
             'amountIncome' => 'required|numeric|min:0.01',
-            'currencyIncome' => 'required|string',
             'accountIncome' => 'required|integer|exists:accounts,id',
+            'category_id' => 'required|integer|exists:categories,id',
             'noteIncome' => 'nullable|string',
         ]);
 
         // Uložení transakce
         Transaction::create([
             'transaction_date' => $validated['dateIncome'],
-            'category_id' => 1, // Přednastavené ID kategorie (můžeš dynamizovat)
+            'user_id' => auth()->id(),
+            'category_id' => $validated['category_id'],
             'amount' => $validated['amountIncome'],
             'account_id' => $validated['accountIncome'],
-            'note' => $validated['noteIncome'],
-            'inserted_by' => auth()->user()->name ?? 'Neznámý uživatel',
-            'inserted_at' => now(),
+            'note' => $validated['noteIncome'] ?? null,
             'transaction_type' => 'income',
-            'icon' => null, // Pokud máš ikonu
         ]);
 
         return redirect()->back()->with('success', 'Příjem byl úspěšně uložen!');
     }
+
 }

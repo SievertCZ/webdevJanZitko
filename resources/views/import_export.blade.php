@@ -1,5 +1,5 @@
 <x-layouts.app>
 
-    TRANSAKCE
+    IMPORT a EXPORT
 
 </x-layouts.app>

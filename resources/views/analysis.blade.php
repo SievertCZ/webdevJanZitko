@@ -1,5 +1,5 @@
 <x-layouts.app>
 
-    TRANSAKCE
+    ANALYZY
 
 </x-layouts.app>

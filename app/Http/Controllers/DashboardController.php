@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use App\Models\Account;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Category;
+
 
 class DashboardController extends Controller
 {
     public function index()
     {
+        // Získání přihlášeného uživatele
         $user = Auth::user();
 
         // Načtení účtů přihlášeného uživatele
@@ -26,9 +28,14 @@ class DashboardController extends Controller
             ->orderBy('transaction_date', 'desc')
             ->get();
 
+        // Načítání kategorií pouze pro transakce typu "income"
+        $categoriesIncomeTransactions = Category::where('type', 'income')->get();
+
+        // Předání dat do view
         return view('dashboard', [
             'accounts' => $accounts,
             'incomeTransactions' => $incomeTransactions,
+            'categoriesIncomeTransactions' => $categoriesIncomeTransactions,
         ]);
     }
 }

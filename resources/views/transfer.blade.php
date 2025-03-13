@@ -1,5 +1,5 @@
 <x-layouts.app>
 
-    TRANSAKCE
+    PREVODY
 
 </x-layouts.app>
